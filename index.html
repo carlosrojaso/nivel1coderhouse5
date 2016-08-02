@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Clase 4</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><h1>Clase 5: Diseñador WEB</h1></section>
+				<section><h1>Flexbox</h1></section>
+				<section>
+					<h2>¿Que es Flexbox?</h2>
+					
+				</section>
+				<section>
+					<ul>
+						<li>
+							Block
+						</li>
+						<li>
+							Inline
+						</li>
+						<li>
+							Table
+						</li>
+						<li>
+							Positioned
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>¿Que se puede hacer con Flexbox?</h2>	
+				</section>
+				<section>
+					<ul>
+						<li>
+						Distribuir los elementos.
+						</li>
+						<li>
+						Reordenar la aparición de los elementos.
+						</li>
+						<li>
+						Ajustar dinámicamente las dimensiones de los elementos para evitar desbordamientos.	
+						</li>
+						<li>
+						Redefinir el sentido del flujo de los elementos.
+						</li>
+						<li>
+						Alinear los elementos respecto al padre o respecto a sus hermanos.
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Conceptos básicos de Flexbox</h2>
+					<img src="http://i.imgur.com/djzs3zF.jpg">
+				</section>
+				<section>
+					<h2>Propiedades para aplicar en el contenedor</h2>
+				</section>
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+div {
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-direction: row-reverse; /* Safari 6.1+ */
+   <mark> display: flex; </mark>
+    flex-direction: row-reverse;
+}	
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/pr_class_display.asp">Link</a>
+				</section>
+
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+div {
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-direction: row-reverse; /* Safari 6.1+ */
+    display: flex;
+    <mark>flex-direction: row-reverse;</mark> 
+}
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_flex-direction.asp">Link</a>
+				</section>
+
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+div {
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: flex;   
+    <mark>flex-wrap: wrap;</mark>
+}
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_flex-wrap.asp">Link</a>
+				</section>
+
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+div {
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-flow: row-reverse wrap; /* Safari 6.1+ */
+    display: flex;
+    <mark>flex-flow: row-reverse wrap;</mark>
+}
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_flex-flow.asp">Link</a>
+				</section>
+
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+div {
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-around; /* Safari 6.1+ */
+    display: flex;
+    <mark>justify-content: space-around;</mark>
+}
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_justify-content.asp">Link</a>
+				</section>
+
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+div {
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    <mark>align-items: center;</mark>
+}
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_align-items.asp">Link</a>
+				</section>
+
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+div {
+    width: 70px;
+    height: 300px;
+    border: 1px solid #c3c3c3;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    <mark>align-content: center;</mark>
+}
+
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_align-content.asp">Link</a>
+				</section>
+
+				<section>
+					<h2>Propiedades a aplicar en los items</h2>
+				</section>
+
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+/* Safari 6.1+ */
+div:nth-of-type(1) {-webkit-flex-grow: 1;}
+div:nth-of-type(2) {-webkit-flex-grow: 3;}
+div:nth-of-type(3) {-webkit-flex-grow: 1;}
+
+/* Standard syntax */
+div:nth-of-type(1) {flex-grow: 1;}
+div:nth-of-type(2) {flex-grow: 3;}
+div:nth-of-type(3) {flex-grow: 1;}
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_flex-grow.asp">Link</a>
+				</section>
+
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+/* Safari 6.1+ */
+div:nth-of-type(2) {
+    -webkit-flex-shrink: 3; 
+} 
+
+/* Standard syntax */
+div:nth-of-type(2) {
+    flex-shrink: 3;
+}
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_flex-shrink.asp">Link</a>
+				</section>
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+div:nth-of-type(2) {
+    -webkit-flex-basis: 80px; /* Safari 6.1+ */
+    flex-basis: 80px;
+}
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_flex-basis.asp">Link</a>
+				</section>
+
+				<section>
+					<pre>
+					<code data-trim data-noescape>
+#myBlueDiv {
+    -webkit-align-self: center; /* Safari 7.0+ */
+    align-self: center;
+}
+					</code>
+					</pre>
+					<a target="_blank" href="http://www.w3schools.com/cssref/css3_pr_align-self.asp">Link</a>
+				</section>
+
+				<section>
+					
+				</section>
+						
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
